@@ -23,15 +23,11 @@ uninstall:
 	@rm -rf ../build
 	@echo "Uninstall completed!"
 
-dvi:
-	@open my_readme.md
-	
 dist: 
 	@mkdir -p ../dist
 	@cp -R ../build/$(TARGET).app ../dist
-	@cp my_readme.md ../dist 
 	@cd ../dist && tar cvzf $(TARGET).tgz *
-	@cd ../dist && rm -rf $(TARGET).app my_readme.md
+	@cd ../dist && rm -rf $(TARGET).app 
 	@echo "Archive creation completed successfully!"
 
 model.a:
